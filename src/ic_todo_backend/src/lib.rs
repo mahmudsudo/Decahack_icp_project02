@@ -27,7 +27,7 @@ impl Todo{
 }
 
 
-#[update]
+#[ic_cdk::update]
 fn create_todo(task: String) -> Result<Todo,()>{
     let id = ID_COUNTER.with(|el| el.borrow_mut().0.clone());
    let todo = Todo::new(task,Nat::from(id));
